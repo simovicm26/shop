@@ -1,38 +1,222 @@
 .App {
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root {
+  overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  border-bottom: 4px solid pink;
+  color: #282c34;
+  -webkit-box-shadow: -1px 0px 28px 0px pink;
+  -moz-box-shadow: -1px 0px 28px 0px pink;
+  box-shadow: -1px 0px 28px 0px pink;
+  top: 0;
+  z-index: 10;
+  background-color: white;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Nav span {
+  color: rgb(255, 136, 158);
+}
+
+.shoppingContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.Home {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 100px;
+  border-bottom: 10px solid pink;
+}
+
+.Home h1 {
+  font-size: 64px;
+}
+
+.Home span {
+  color: rgb(255, 136, 158);
+}
+
+.Home button {
+  background-color: rgb(255, 136, 158);
+  border: none;
+  font-size: 20px;
+  padding: 15px 30px;
+  border-radius: 5px;
+  width: fit-content;
+  transition: all 0.3s ease-out;
+}
+.Home button:hover {
+  background-color: rgb(255, 176, 191);
+  /* border: 3px solid #282c34; */
+  -webkit-box-shadow: -1px 0px 28px 0px pink;
+  -moz-box-shadow: -1px 0px 28px 0px pink;
+  box-shadow: -1px 0px 28px 0px pink;
+}
+
+.Home img {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  height: 500px;
+  object-fit: cover;
+  border: 3px solid pink;
+}
+
+.contentContainer {
+  margin: 100px 0;
+}
+
+.Nav h3:hover {
+  color: rgb(255, 136, 158);
+}
+
+.cart,
+.closeCart,
+.increase,
+.reduce {
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  transition: all 0.3s ease-out;
 }
 
-.App-link {
-  color: #61dafb;
+.closeCart:hover,
+.cart:hover,
+.increase:hover,
+.reduce:hover {
+  background-color: pink;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Shop {
+  padding: 100px 0;
+  border-bottom: 10px solid pink;
+}
+
+.card {
+  background-color: white;
+  width: 300px;
+  height: 450px;
+  border-radius: 20px;
+  border: 3px solid pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.card img {
+  height: 330px;
+  object-fit: cover;
+  border-bottom: 3px solid pink;
+}
+
+.itemsContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 300px);
+  justify-content: center;
+  gap: 40px;
+  padding: 100px 0;
+}
+
+.controlsContainer {
+  z-index: 100;
+}
+
+.controlsContainer button {
+  border: none;
+  border-top: 3px solid pink;
+  font-size: 20px;
+  width: 100%;
+  background-color: white;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.controlsContainer button:hover {
+  background-color: pink;
+}
+
+.Cart {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(37, 37, 37, 0.322);
+  z-index: 1000;
+}
+
+.cartContainer {
+  width: 500px;
+  position: relative;
+  height: 100%;
+  background-color: white;
+  margin-left: auto;
+  border-left: 3px solid pink;
+  padding: 50px 50px;
+  z-index: 100;
+  overflow: scroll;
+}
+
+.cartContainer h1 {
+  margin: 50px 0;
+}
+
+.closeCart {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.contentImage {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  grid-row: 1/3;
+  grid-column: 1/2;
+  border-radius: 20px;
+  border: 3px solid pink;
+}
+
+.itemContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 150px;
+  margin: 75px 0;
+}
+
+.quantityContainer {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  grid-column: 2/3;
+  grid-row: 2/3;
+  justify-self: center;
+}
+
+.itemContainer h3 {
+  grid-column: 2/3;
+  grid-row: 1/2;
 }
